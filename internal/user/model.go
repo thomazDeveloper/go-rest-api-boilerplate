@@ -8,19 +8,15 @@ import (
 
 // User represents a user in the system
 type User struct {
-	ID           uint           `gorm:"primaryKey" json:"id"`
-	Name         string         `gorm:"not null" json:"name"`
-	Email        string         `gorm:"uniqueIndex;not null" json:"email"`
-	PasswordHash string         `gorm:"not null" json:"-"`
-	Roles        []Role         `gorm:"many2many:user_roles;" json:"-"`
-	CreatedAt    time.Time      `json:"created_at"`
-	UpdatedAt    time.Time      `json:"updated_at"`
-	DeletedAt    gorm.DeletedAt `gorm:"index" json:"-"`
-}
-
-// TableName specifies the table name for User model
-func (User) TableName() string {
-	return "users"
+	bun.BaseModel `bun:"table:users,alias:u"`
+	ID           int64           `bun:"id,pk,autoincrement" json:"id"`
+	Name         string         `bun:"name,notnull" json:"name"`
+	Email        string         `bun:"email,uniqueIndex,notnull" json:"email"`
+	PasswordHash string         `bun:"password_hash,notnull" json:"-"`
+	Roles        []Role         `bun:"m2m:user_roles,join:User=Role" json:"-"`
+	CreatedAt time.Time `bun:"created_at,nullzero,notnull,default:current_timestamp" json:"created_at"`
+    UpdatedAt time.Time `bun:"updated_at,nullzero,notnull,default:current_timestamp" json:"updated_at"`
+    DeletedAt bun.NullTime `bun:"deleted_at,soft_delete" json:"-"`
 }
 
 // HasRole checks if user has specific role

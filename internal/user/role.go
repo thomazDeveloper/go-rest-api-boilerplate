@@ -10,14 +10,10 @@ const (
 
 // Role represents a user role in the system
 type Role struct {
-	ID          uint      `gorm:"primaryKey" json:"id"`
-	Name        string    `gorm:"uniqueIndex;not null" json:"name"`
-	Description string    `json:"description"`
-	CreatedAt   time.Time `json:"created_at"`
-	UpdatedAt   time.Time `json:"updated_at"`
-}
-
-// TableName specifies the table name for Role model
-func (Role) TableName() string {
-	return "roles"
+	bun.BaseModel `bun:"table:roles,alias:r"`
+	ID           int64           `bun:"id,pk,autoincrement" json:"id"`
+	Name         string          `bun:"name,unique,notnull" json:"name"`
+	Description string    `bun:"description" json:"description"`
+	CreatedAt   time.Time `bun:"created_at,nullzero,notnull,default:current_timestamp" json:"created_at"`
+	UpdatedAt   time.Time `bun:"updated_at,nullzero,notnull,default:current_timestamp" json:"updated_at"`
 }
