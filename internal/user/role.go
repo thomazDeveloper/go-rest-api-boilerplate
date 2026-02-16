@@ -3,7 +3,7 @@ package user
 import "time"
 
 const (
-	RoleGuest = "guest"
+	RoleModerator = "moderator"
 	RoleUser  = "user"
 	RoleAdmin = "admin"
 )
@@ -13,6 +13,7 @@ type Role struct {
 	bun.BaseModel `bun:"table:roles,alias:r"`
 	ID           int64           `bun:"id,pk,autoincrement" json:"id"`
 	Name         string          `bun:"name,unique,notnull" json:"name"`
+	Level		int             `bun:"level,notnull" json:"level"`
 	Description string    `bun:"description" json:"description"`
 	CreatedAt   time.Time `bun:"created_at,nullzero,notnull,default:current_timestamp" json:"created_at"`
 	UpdatedAt   time.Time `bun:"updated_at,nullzero,notnull,default:current_timestamp" json:"updated_at"`

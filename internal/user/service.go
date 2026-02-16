@@ -64,7 +64,7 @@ func (s *service) RegisterUser(ctx context.Context, req RegisterRequest) (*User,
 	}
 
 	// Use transaction to ensure atomic user creation and role assignment
-	err = s.repo.CreateAndAssignRole(ctx, user, RoleGuest)
+	err = s.repo.CreateAndAssignRole(ctx, user, RoleUser)
 
 	if err != nil {
 		return nil, err
@@ -166,7 +166,7 @@ func (s *service) ListUsers(ctx context.Context, filters UserFilterParams, page,
 		return nil, 0, fmt.Errorf("perPage must be <= 100")
 	}
 
-	if filters.Role != "" && filters.Role != RoleGuest && filters.Role != RoleUser && filters.Role != RoleAdmin {
+	if filters.Role != "" && filters.Role != RoleModerator && filters.Role != RoleUser && filters.Role != RoleAdmin {
 		return nil, 0, ErrInvalidRole
 	}
 
@@ -176,6 +176,26 @@ func (s *service) ListUsers(ctx context.Context, filters UserFilterParams, page,
 	}
 
 	return users, total, nil
+}
+
+func (s *service) PromoteToModerator(ctx context.Context, userID uint) error {
+	user, err := s.repo.FindByID(ctx, userID)
+	if err != nil {
+		return fmt.Errorf("failed to find user: %w", err)
+	}
+	if user == nil {
+		return ErrUserNotFound
+	}
+
+	if user.HasRole(RoleModerator) {
+		return nil
+	}
+
+	if err := s.repo.AssignRole(ctx, userID, RoleModerator); err != nil {
+		return fmt.Errorf("failed to assign moderator role: %w", err)
+	}
+
+	return nil
 }
 
 // PromoteToAdmin promotes a user to admin role
