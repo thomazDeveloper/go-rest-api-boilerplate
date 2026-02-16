@@ -9,10 +9,10 @@ import (
 )
 
 type DatabaseChecker struct {
-	db *gorm.DB
+	db *bun.DB
 }
 
-func NewDatabaseChecker(db *gorm.DB) *DatabaseChecker {
+func NewDatabaseChecker(db *bun.DB) *DatabaseChecker {
 	return &DatabaseChecker{db: db}
 }
 

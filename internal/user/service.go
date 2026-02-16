@@ -64,17 +64,7 @@ func (s *service) RegisterUser(ctx context.Context, req RegisterRequest) (*User,
 	}
 
 	// Use transaction to ensure atomic user creation and role assignment
-	err = s.repo.Transaction(ctx, func(txCtx context.Context) error {
-		if err := s.repo.Create(txCtx, user); err != nil {
-			return fmt.Errorf("failed to create user: %w", err)
-		}
-
-		if err := s.repo.AssignRole(txCtx, user.ID, RoleUser); err != nil {
-			return fmt.Errorf("failed to assign default role: %w", err)
-		}
-
-		return nil
-	})
+	err = s.repo.CreateAndAssignRole(ctx, user, RoleGuest)
 
 	if err != nil {
 		return nil, err
@@ -176,7 +166,7 @@ func (s *service) ListUsers(ctx context.Context, filters UserFilterParams, page,
 		return nil, 0, fmt.Errorf("perPage must be <= 100")
 	}
 
-	if filters.Role != "" && filters.Role != RoleUser && filters.Role != RoleAdmin {
+	if filters.Role != "" && filters.Role != RoleGuest && filters.Role != RoleUser && filters.Role != RoleAdmin {
 		return nil, 0, ErrInvalidRole
 	}
 

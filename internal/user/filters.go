@@ -18,7 +18,7 @@ type UserFilterParams struct {
 // ParseUserFilters parses and validates user filter parameters from request
 func ParseUserFilters(c *gin.Context) UserFilterParams {
 	role := c.Query("role")
-	if role != "" && role != RoleUser && role != RoleAdmin {
+	if role != "" && role != RoleGuest && role != RoleUser && role != RoleAdmin {
 		role = ""
 	}
 

@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/time/rate"
 
-	apiErrors "github.com/vahiiiid/go-rest-api-boilerplate/internal/errors"
+	apiErrors "github.com/thomazDeveloper/go-rest-api-boilerplate/internal/errors"
 )
 
 func init() {

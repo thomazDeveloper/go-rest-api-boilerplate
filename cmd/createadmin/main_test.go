@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/user"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/user"
 )
 
 type MockService struct {

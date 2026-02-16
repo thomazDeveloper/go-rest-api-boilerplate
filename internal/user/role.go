@@ -3,6 +3,7 @@ package user
 import "time"
 
 const (
+	RoleGuest = "guest"
 	RoleUser  = "user"
 	RoleAdmin = "admin"
 )

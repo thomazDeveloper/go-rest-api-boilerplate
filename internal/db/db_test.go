@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/config"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/config"
 )
 
 func TestNewSQLiteDB(t *testing.T) {

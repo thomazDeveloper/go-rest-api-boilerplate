@@ -7,10 +7,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/auth"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/contextutil"
-	apiErrors "github.com/vahiiiid/go-rest-api-boilerplate/internal/errors"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/middleware"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/auth"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/contextutil"
+	apiErrors "github.com/thomazDeveloper/go-rest-api-boilerplate/internal/errors"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/middleware"
 )
 
 // Handler handles user-related HTTP requests

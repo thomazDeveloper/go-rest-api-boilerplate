@@ -14,15 +14,15 @@ import (
 	"github.com/stretchr/testify/assert"
 	"gorm.io/gorm"
 
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/auth"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/config"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/db"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/server"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/user"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/auth"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/config"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/db"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/server"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/user"
 )
 
 // createTestSchema creates the SQLite test schema using GORM AutoMigrate for consistency
-func createTestSchema(t *testing.T, database *gorm.DB) {
+func createTestSchema(t *testing.T, database *bun.DB) {
 	t.Helper()
 
 	err := database.AutoMigrate(&user.User{}, &user.Role{}, &auth.RefreshToken{})

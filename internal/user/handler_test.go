@@ -13,8 +13,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/auth"
-	apiErrors "github.com/vahiiiid/go-rest-api-boilerplate/internal/errors"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/auth"
+	apiErrors "github.com/thomazDeveloper/go-rest-api-boilerplate/internal/errors"
 )
 
 // MockAuthService is a mock implementation of the auth service

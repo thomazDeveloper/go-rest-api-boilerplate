@@ -11,7 +11,7 @@ import (
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/config"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/config"
 )
 
 // testUser is a minimal user struct for testing
@@ -50,7 +50,7 @@ func (testUserRole) TableName() string {
 	return "user_roles"
 }
 
-func setupServiceTest(t *testing.T) (*service, *gorm.DB) {
+func setupServiceTest(t *testing.T) (*service, *bun.DB) {
 	db, err := gorm.Open(sqlite.Open(":memory:"), &gorm.Config{})
 	require.NoError(t, err)
 
@@ -342,13 +342,13 @@ func TestService_RevokeRefreshToken_TokenNotFound(t *testing.T) {
 func TestService_RevokeUserRefreshToken(t *testing.T) {
 	tests := []struct {
 		name          string
-		setupFunc     func(t *testing.T, svc *service, db *gorm.DB) (userID uint, refreshToken string)
+		setupFunc     func(t *testing.T, svc *service, db *bun.DB) (userID uint, refreshToken string)
 		userID        uint
 		expectedError string
 	}{
 		{
 			name: "successful_revocation",
-			setupFunc: func(t *testing.T, svc *service, db *gorm.DB) (uint, string) {
+			setupFunc: func(t *testing.T, svc *service, db *bun.DB) (uint, string) {
 				ctx := context.Background()
 				pair, err := svc.GenerateTokenPair(ctx, 1, "test@example.com", "Test User")
 				require.NoError(t, err)
@@ -358,7 +358,7 @@ func TestService_RevokeUserRefreshToken(t *testing.T) {
 		},
 		{
 			name: "token_does_not_belong_to_user",
-			setupFunc: func(t *testing.T, svc *service, db *gorm.DB) (uint, string) {
+			setupFunc: func(t *testing.T, svc *service, db *bun.DB) (uint, string) {
 				ctx := context.Background()
 				pair, err := svc.GenerateTokenPair(ctx, 1, "test@example.com", "Test User")
 				require.NoError(t, err)
@@ -368,7 +368,7 @@ func TestService_RevokeUserRefreshToken(t *testing.T) {
 		},
 		{
 			name: "token_not_found_returns_nil",
-			setupFunc: func(t *testing.T, svc *service, db *gorm.DB) (uint, string) {
+			setupFunc: func(t *testing.T, svc *service, db *bun.DB) (uint, string) {
 				return 1, "non-existent-token-12345"
 			},
 			expectedError: "",

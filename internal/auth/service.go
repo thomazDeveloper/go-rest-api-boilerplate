@@ -13,7 +13,7 @@ import (
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/config"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/config"
 )
 
 var (
@@ -52,7 +52,7 @@ type service struct {
 	accessTokenTTL   time.Duration
 	refreshTokenTTL  time.Duration
 	refreshTokenRepo RefreshTokenRepository
-	db               *gorm.DB
+	db               *bun.DB
 }
 
 // NewService creates a new authentication service using typed config
@@ -84,7 +84,7 @@ func NewService(cfg *config.JWTConfig) Service {
 }
 
 // NewServiceWithRepo creates a new authentication service with refresh token repository
-func NewServiceWithRepo(cfg *config.JWTConfig, db *gorm.DB) Service {
+func NewServiceWithRepo(cfg *config.JWTConfig, db *bun.DB) Service {
 	jwtSecret := cfg.Secret
 	if jwtSecret == "" {
 		jwtSecret = "default-secret-change-in-production"

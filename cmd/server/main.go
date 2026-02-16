@@ -12,13 +12,13 @@ import (
 
 	"gorm.io/gorm"
 
-	_ "github.com/vahiiiid/go-rest-api-boilerplate/api/docs"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/auth"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/config"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/db"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/migrate"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/server"
-	"github.com/vahiiiid/go-rest-api-boilerplate/internal/user"
+	_ "github.com/thomazDeveloper/go-rest-api-boilerplate/api/docs"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/auth"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/config"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/db"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/migrate"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/server"
+	"github.com/thomazDeveloper/go-rest-api-boilerplate/internal/user"
 )
 
 // @title Go REST API Boilerplate
@@ -149,7 +149,7 @@ func run() error {
 	return nil
 }
 
-func checkMigrationStatus(database *gorm.DB, cfg *config.MigrationsConfig) error {
+func checkMigrationStatus(database *bun.DB, cfg *config.MigrationsConfig) error {
 	sqlDB, err := database.DB()
 	if err != nil {
 		return fmt.Errorf("failed to get sql.DB: %w", err)

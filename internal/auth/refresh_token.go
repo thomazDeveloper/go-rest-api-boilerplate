@@ -28,7 +28,7 @@ type RefreshToken struct {
 }
 
 // BeforeCreate is a GORM hook that sets the ID and CreatedAt before creating the record
-func (rt *RefreshToken) BeforeCreate(tx *gorm.DB) error {
+func (rt *RefreshToken) BeforeCreate(tx *bun.DB) error {
 	if rt.ID == uuid.Nil {
 		rt.ID = uuid.New()
 	}
@@ -55,11 +55,11 @@ type RefreshTokenRepository interface {
 }
 
 type refreshTokenRepository struct {
-	db *gorm.DB
+	db *bun.DB
 }
 
 // NewRefreshTokenRepository creates a new refresh token repository
-func NewRefreshTokenRepository(db *gorm.DB) RefreshTokenRepository {
+func NewRefreshTokenRepository(db *bun.DB) RefreshTokenRepository {
 	return &refreshTokenRepository{db: db}
 }
 

@@ -414,8 +414,8 @@ go-rest-api-boilerplate/
 ## Links
 
 - [Documentation](https://vahiiiid.github.io/go-rest-api-docs/)
-- [GitHub Repository](https://github.com/vahiiiid/go-rest-api-boilerplate)
-- [Report Issues](https://github.com/vahiiiid/go-rest-api-boilerplate/issues)
+- [GitHub Repository](https://github.com/thomazDeveloper/go-rest-api-boilerplate)
+- [Report Issues](https://github.com/thomazDeveloper/go-rest-api-boilerplate/issues)
 - [Contributing Guidelines](CONTRIBUTING.md)
 
 ---

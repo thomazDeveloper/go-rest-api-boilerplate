@@ -20,7 +20,7 @@ linters-settings:
   gofmt:
     simplify: true
   goimports:
-    local-prefixes: github.com/vahiiiid/go-rest-api-boilerplate
+    local-prefixes: github.com/thomazDeveloper/go-rest-api-boilerplate
 
 issues:
   exclude-use-default: false

@@ -87,7 +87,7 @@ internal/<domain>/
 
 **Get current user**:
 ```go
-import "github.com/vahiiiid/go-rest-api-boilerplate/internal/contextutil"
+import "github.com/thomazDeveloper/go-rest-api-boilerplate/internal/contextutil"
 
 userID := contextutil.GetUserID(c)
 userEmail := contextutil.GetEmail(c)
@@ -99,7 +99,7 @@ hasRole := contextutil.HasRole(c, "moderator")
 
 **Protect routes**:
 ```go
-import "github.com/vahiiiid/go-rest-api-boilerplate/internal/middleware"
+import "github.com/thomazDeveloper/go-rest-api-boilerplate/internal/middleware"
 
 // Admin-only route
 v1.Use(middleware.RequireAdmin()).
@@ -117,7 +117,7 @@ v1.Use(middleware.RequireRole("admin")).
 ```go
 import (
     "errors"
-    apiErrors "github.com/vahiiiid/go-rest-api-boilerplate/internal/errors"
+    apiErrors "github.com/thomazDeveloper/go-rest-api-boilerplate/internal/errors"
 )
 
 // Validation errors
@@ -270,5 +270,5 @@ Full guide: https://vahiiiid.github.io/go-rest-api-docs/CONFIGURATION/
 
 **Resources**:
 - Documentation: https://vahiiiid.github.io/go-rest-api-docs/
-- Repository: https://github.com/vahiiiid/go-rest-api-boilerplate
-- Issues: https://github.com/vahiiiid/go-rest-api-boilerplate/issues
+- Repository: https://github.com/thomazDeveloper/go-rest-api-boilerplate
+- Issues: https://github.com/thomazDeveloper/go-rest-api-boilerplate/issues

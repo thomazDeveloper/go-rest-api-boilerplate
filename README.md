@@ -9,15 +9,15 @@ Production-ready in 90 seconds. No headaches, just clean code.
 *GRAB is a Go boilerplate that doesn't waste your time — highly tested, Docker-ready, fully documented, **AI-assistant optimized**, with everything you need. Built for developers who want to code with AI, not fight it.*
 
 [![Go Version](https://img.shields.io/badge/Go-1.24+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
-[![Release](https://img.shields.io/github/v/release/vahiiiid/go-rest-api-boilerplate?color=blue)](https://github.com/vahiiiid/go-rest-api-boilerplate/releases/tag/v2.0.0)
+[![Release](https://img.shields.io/github/v/release/vahiiiid/go-rest-api-boilerplate?color=blue)](https://github.com/thomazDeveloper/go-rest-api-boilerplate/releases/tag/v2.0.0)
 [![codecov](https://codecov.io/gh/vahiiiid/go-rest-api-boilerplate/graph/badge.svg?branch=main)](https://codecov.io/gh/vahiiiid/go-rest-api-boilerplate)
-[![CI](https://github.com/vahiiiid/go-rest-api-boilerplate/workflows/CI/badge.svg)](https://github.com/vahiiiid/go-rest-api-boilerplate/actions)
+[![CI](https://github.com/thomazDeveloper/go-rest-api-boilerplate/workflows/CI/badge.svg)](https://github.com/thomazDeveloper/go-rest-api-boilerplate/actions)
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![Go Report Card](https://goreportcard.com/badge/github.com/vahiiiid/go-rest-api-boilerplate)](https://goreportcard.com/report/github.com/vahiiiid/go-rest-api-boilerplate)
+[![Go Report Card](https://goreportcard.com/badge/github.com/thomazDeveloper/go-rest-api-boilerplate)](https://goreportcard.com/report/github.com/thomazDeveloper/go-rest-api-boilerplate)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Documentation](https://img.shields.io/badge/docs-read%20the%20docs-brightgreen?logo=readthedocs&logoColor=white)](https://vahiiiid.github.io/go-rest-api-docs/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![GitHub Stars](https://img.shields.io/github/stars/vahiiiid/go-rest-api-boilerplate?style=social)](https://github.com/vahiiiid/go-rest-api-boilerplate/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/vahiiiid/go-rest-api-boilerplate?style=social)](https://github.com/thomazDeveloper/go-rest-api-boilerplate/stargazers)
 
 **[📖 Full Documentation](https://vahiiiid.github.io/go-rest-api-docs/)** • **[🚀 Quick Start](#-quick-start)** • **[✨ Live Demo](#-see-it-in-action)**
 
@@ -106,7 +106,7 @@ Get your API running in **under 2 minutes**:
 ### One-Command Setup ⚡
 
 ```bash
-git clone https://github.com/vahiiiid/go-rest-api-boilerplate.git
+git clone https://github.com/thomazDeveloper/go-rest-api-boilerplate.git
 cd go-rest-api-boilerplate
 make quick-start
 ```
@@ -432,9 +432,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 💬 Support & Community
 
 - 📖 [Read the Documentation](https://vahiiiid.github.io/go-rest-api-docs/)
-- 🐛 [Report Bugs](https://github.com/vahiiiid/go-rest-api-boilerplate/issues)
-- 💬 [Ask Questions](https://github.com/vahiiiid/go-rest-api-boilerplate/discussions)
-- ⭐ [Star this repo](https://github.com/vahiiiid/go-rest-api-boilerplate) if you find it helpful!
+- 🐛 [Report Bugs](https://github.com/thomazDeveloper/go-rest-api-boilerplate/issues)
+- 💬 [Ask Questions](https://github.com/thomazDeveloper/go-rest-api-boilerplate/discussions)
+- ⭐ [Star this repo](https://github.com/thomazDeveloper/go-rest-api-boilerplate) if you find it helpful!
 
 ---
 
@@ -442,6 +442,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ for the Go community**
 
-[⭐ Star](https://github.com/vahiiiid/go-rest-api-boilerplate) • [📖 Docs](https://vahiiiid.github.io/go-rest-api-docs/) • [🐛 Issues](https://github.com/vahiiiid/go-rest-api-boilerplate/issues) • [💬 Discussions](https://github.com/vahiiiid/go-rest-api-boilerplate/discussions)
+[⭐ Star](https://github.com/thomazDeveloper/go-rest-api-boilerplate) • [📖 Docs](https://vahiiiid.github.io/go-rest-api-docs/) • [🐛 Issues](https://github.com/thomazDeveloper/go-rest-api-boilerplate/issues) • [💬 Discussions](https://github.com/thomazDeveloper/go-rest-api-boilerplate/discussions)
 
 </div>

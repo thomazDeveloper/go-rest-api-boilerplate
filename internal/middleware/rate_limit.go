@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/golang-lru/v2/expirable"
 	"golang.org/x/time/rate"
 
-	apiErrors "github.com/vahiiiid/go-rest-api-boilerplate/internal/errors"
+	apiErrors "github.com/thomazDeveloper/go-rest-api-boilerplate/internal/errors"
 )
 
 // Storage abstracts the backing store for per-key limiters.
